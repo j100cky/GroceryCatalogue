@@ -16,7 +16,7 @@ function TabNavigator() {
       <Text>Tab Navigator</Text>
       <NavigationContainer>
         <SafeAreaView style={styles.safeArea}>
-            <Text style={style.brandName}>
+            <Text style={styles.brandName}>
                 Fresh Mart
             </Text>
 
