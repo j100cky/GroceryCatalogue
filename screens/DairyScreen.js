@@ -17,9 +17,21 @@ export default function DairyScreen() {
     ];
   
     return (
-      <ScrollView contentContainerStyle={styles.container}>
-       
-      </ScrollView>
+        <ScrollView contentContainerStyle={styles.container}>
+            <Text style={styles.title}>Fresh diary products for you from folders</Text>
+            {items.map((item, index) => (
+                <View key={index} style={styles.itemContainer}>
+                    <Image source={{uri:item.image}} style={styles.image}/>
+                    <View style={styles.details}>
+                        <Text style={styles.name}>{item.name}</Text>
+                        <Text style={styles.price}>{item.price}</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => alert(`${item.name} added to cart.`)}>
+                            <Text style={styles.buttonText}>Add to Cart</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            ))}
+        </ScrollView>
     );
   }
  

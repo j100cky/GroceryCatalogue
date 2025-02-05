@@ -15,9 +15,23 @@ export default function FruitsScreen() {
     ];
   
     return (
-      <ScrollView style={styles.container}>
-       
-      </ScrollView>
+        <ScrollView style={styles.container}>
+            <Text style={styles.title}>
+                Handpicked, extra juicy fruits.
+            </Text>
+            {fruits.map((fruit, index) => (
+                <View key={index} style={styles.itemContainer}>
+                    <Image source={{uri:fruit.image}} style={styles.image}/>
+                    <View style={styles.details}>
+                        <Text style={styles.name}>{fruit.name}</Text>
+                        <Text style={styles.price}>{fruit.price}</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => alert(`${fruit.name} added to cart.`)}>
+                            <Text style={styles.buttonText}>Add to Cart</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            ))}
+        </ScrollView>
     );
   }
   
